@@ -52,7 +52,7 @@ const Frame2 = () => {
                   return;
                 }
 
-                handlePersonDelete(idx);
+                handlePersonDelete(idx, order);
               }}
               onItemClick={() => {
                 setSelectedIdx(idx);
@@ -62,7 +62,7 @@ const Frame2 = () => {
         })}
         <OrderTotalCard
           order={order}
-          onAddPersonClick={handlePersonAdd}
+          onAddPersonClick={() => handlePersonAdd(order)}
           onNextClick={() => {
             setPage(3);
           }}

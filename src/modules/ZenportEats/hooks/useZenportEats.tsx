@@ -18,8 +18,8 @@ interface ZenportEatsContextProps {
   selectedIdx: number;
   setSelectedIdx: Dispatch<SetStateAction<number>>;
   handleFoodItemAdd: (foodItem: FoodMenuItem) => void;
-  handlePersonDelete: (personIdx: number) => void;
-  handlePersonAdd: () => void;
+  handlePersonDelete: (personIdx: number, order: Order) => void;
+  handlePersonAdd: (order: Order) => void;
 }
 
 /* eslint-disable */
@@ -69,7 +69,7 @@ export const ZenportEatsProvider = ({ children }: Props) => {
     });
   };
 
-  const handlePersonDelete = useCallback((personIdx: number) => {
+  const handlePersonDelete = useCallback((personIdx: number, order: Order) => {
     const newOrder = {
       ...order,
       orders: order.orders.filter((_, orderIdx) => orderIdx !== personIdx),
@@ -78,7 +78,7 @@ export const ZenportEatsProvider = ({ children }: Props) => {
     setOrder(newOrder);
   }, []);
 
-  const handlePersonAdd = useCallback(() => {
+  const handlePersonAdd = useCallback((order: Order) => {
     const newOrder = {
       ...order,
       orders: [

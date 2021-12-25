@@ -43,6 +43,7 @@ const Frame2 = () => {
             <OrderDetailCard
               key={idx}
               userName={foodOrder.name}
+              id={foodOrder.id}
               selected={idx === selectedIdx}
               items={foodOrder.items}
               onDeleteClick={(e: React.MouseEvent<HTMLElement>) => {

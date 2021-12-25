@@ -39,6 +39,7 @@ const Frame1 = () => {
               .map((_, idx) => {
                 return {
                   name: `Person ${idx + 1}`,
+                  id: idx + 1,
                   items: [],
                 };
               }),

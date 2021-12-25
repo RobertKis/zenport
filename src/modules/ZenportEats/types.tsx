@@ -6,6 +6,7 @@ export interface FoodMenuOrderItem extends FoodMenuItem {
 
 export interface FoodOrder {
   name: string;
+  id: number;
   items: FoodMenuOrderItem[];
 }
 

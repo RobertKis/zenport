@@ -10,6 +10,7 @@ const { Text } = Typography;
 interface Props {
   userName: string;
   items: FoodMenuOrderItem[];
+  id: number;
   selected?: boolean;
   onDeleteClick?: (e: React.MouseEvent<HTMLElement>) => void;
   onItemClick?: () => void;
@@ -19,6 +20,7 @@ const OrderDetailCard = ({
   userName,
   selected = false,
   items,
+  id,
   onItemClick,
   onDeleteClick,
 }: Props) => {
